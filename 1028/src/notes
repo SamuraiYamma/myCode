@@ -1,0 +1,31 @@
+
+ArrayList list = new ArrayList();
+
+            for (int c = 0; c < board.length; c++){
+
+                //this takes the first row, and if the value is not 0, adds
+                //it to list
+                if(board[r][c] != 0){
+                    list.add(board[r][c]);
+                }
+
+                //creates second list
+                ArrayList list2 = new ArrayList();
+                //creates a dummy spot that will be removed later
+                list.add(0);
+
+                //for as many cells are actually in the current row, do stuff
+                for(int i = 0; i < list.size() - 1; i++) {
+
+                    //if any two are the same, combine them, and add to second list
+                    //otherwise just add it to the list
+                    if(list.get(i) == list.get(i + 1)){
+                        list2.get((int)list.get(i) + (int)list.get(i + 1));
+                        i++;
+                    }
+                    else{
+                        list2.add(list.get(i));
+                    }
+                }
+            }
+        }
